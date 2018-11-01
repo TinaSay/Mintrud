@@ -1,0 +1,126 @@
+.breadcrumb .home {
+    width: 14px;
+    height: 14px;
+    background: url(../img/icon/home.svg) no-repeat 0 0 transparent;
+    display: inline-block;
+    margin-bottom: 4px;
+    margin-right: 5px;
+}
+
+.breadcrumb > li:last-of-type:after {
+    content: '';
+}
+
+.sub-title-and-link__list-link li.active a:after {
+    content: '';
+    position: absolute;
+    left: 0;
+    opacity: 1;
+    bottom: 0;
+    background-color: #0B75BA;
+    width: 100%;
+    height: 4px;
+}
+
+.confirm-email__error {
+    color: #ff3333;
+    display: none;
+    max-width: 100%;
+    margin-bottom: 5px;
+}
+
+.confirm-email__elem label {
+    display: none !important;
+}
+
+.form-group .captcha-image {
+    text-align: center;
+    padding-top: 6px;
+}
+
+.form-group.parent-question > label {
+    width: 100%;
+}
+
+.form-group.parent-question.error > label {
+    color: #ff3333;
+}
+
+.form .error-summary {
+    color: #ff3333;
+    font-size: 16px;
+    padding-bottom: 10px;
+}
+
+.breadcrumb > li:first-child:after {
+    padding: 0 10px;
+    color: #767676;
+    content: "/\00a0";
+}
+
+.questionnaire-result .percent-box {
+    margin: 0;
+    display: inline-block;
+    height: 18px;
+    overflow: hidden;
+    width: 100%;
+}
+
+.questionnaire-result .count {
+    display: inline-block;
+    margin-left: 5px;
+    line-height: 18px;
+    position: absolute;
+    color: #090;
+    font-weight: bold;
+}
+
+.questionnaire-result .percent {
+    background-color: #090;
+    color: #fff;
+    display: block;
+    font-size: 1em;
+    font-weight: bold;
+    height: 18px;
+    line-height: 18px;
+    overflow: hidden;
+    text-align: center;
+    float: left;
+}
+
+.questionnaire .hint i {
+    font-weight: 500;
+}
+
+.font-weight-select {
+    font-weight: 500 !important;
+}
+
+a.fc-event:focus {
+    color: #fff;
+}
+
+.fc-event.meeting {
+    background-color: #f24759;
+    cursor: pointer;
+    border: 1px solid #f24759;
+}
+
+.fc-event.meeting.clicked {
+    border: 1px solid rgba(0, 0, 0, 0.8);
+}
+
+.fileupload .error {
+    font-weight: 400;
+    color: red;
+    display: block;
+    margin: 20px 0 0 -15px;
+}
+
+.form-comment .sm textarea {
+    min-height: 100px;
+}
+
+.fancybox-caption a {
+    color: #0B75BA!important;
+}

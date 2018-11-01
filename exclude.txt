@@ -1,0 +1,10 @@
+.git
+/.env
+/tmp
+/docker/server/*/
+/docker/config/certificate/
+/html/web/html/
+/html/web/robots.txt
+/html/web/uploads/*/
+/html/web/phpmyadmin-mt2017/
+/html/framework/runtime/*/

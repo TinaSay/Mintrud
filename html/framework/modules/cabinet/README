@@ -1,0 +1,199 @@
+backend.php
+
+'modules' => [
+    'cabinet' => [
+        'class' => 'app\modules\cabinet\Cabinet',
+        'viewPath' => '@app/modules/cabinet/views/backend',
+        'controllerNamespace' => 'app\modules\cabinet\controllers\backend',
+    ],
+],
+
+frontend.php
+
+'modules' => [
+    'cabinet' => [
+        'class' => 'app\modules\cabinet\Cabinet',
+        'viewPath' => '@app/modules/cabinet/views/frontend',
+        'controllerNamespace' => 'app\modules\cabinet\controllers\frontend',
+        'as AccessControl' => [
+            'class' => \yii\filters\AccessControl::className(),
+            'except' => [
+                'default/oauth',
+                'default/captcha',
+                'default/login',
+                'default/login-with-email',
+                'default/registration',
+                'default/registration-with-email',
+                'default/confirm',
+                'default/confirm-with-email',
+                'default/reset',
+                'default/retry-with-email',
+            ],
+            'rules' => [
+                // all users
+                [
+                    'allow' => false,
+                    'roles' => ['@'],
+                    'matchCallback' => function () {
+                        $factory = new \app\modules\cabinet\components\UserFactory();
+
+                        $service = $factory->service('LoginWithEmail');
+
+                        $user = Yii::$app->getUser()->getIdentity();
+                        $form = $factory->form('LoginWithEmail');
+
+                        return $service->matchForbidden($user, $form);
+                    },
+                    'denyCallback' => function () {
+                        Yii::$app->getResponse()->redirect('/cabinet/default/confirm-with-email');
+                        Yii::$app->end();
+                    },
+                ],
+                // authorized users
+                [
+                    'allow' => true,
+                    'roles' => ['@'],
+                ],
+            ],
+        ],
+    ],
+],
+'components' => [
+    'user' => [
+        'class' => 'yii\web\User',
+        'identityClass' => 'app\modules\cabinet\models\Client',
+        'loginUrl' => ['/cabinet/default/login'],
+        // http://www.yiiframework.com/doc-2.0/yii-web-user.html#loginRequired()-detail
+        'returnUrl' => ['/cabinet/view/index'],
+        // Whether to enable cookie-based login: Yii::$app->user->login($this->getUser(), 24 * 60 * 60)
+        'enableAutoLogin' => false,
+        // http://www.yiiframework.com/doc-2.0/yii-web-user.html#$authTimeout-detail
+        'authTimeout' => 1 * 60 * 60,
+        'on afterLogin' => [
+            'app\modules\cabinet\components\ClientEventHandler',
+            'handleAfterLogin',
+        ],
+        'on afterLogout' => [
+            'app\modules\cabinet\components\ClientEventHandler',
+            'handleAfterLogout',
+        ],
+    ],
+    'authClientCollection' => [
+        'class' => 'yii\authclient\Collection',
+        'clients' => [
+            'yandex' => [
+                'class' => 'app\modules\cabinet\clients\YandexOAuth',
+                'clientId' => '',
+                'clientSecret' => '',
+                'normalizeUserAttributeMap' => [
+                    'email' => 'default_email',
+                ],
+            ],
+            'google' => [
+                'class' => 'app\modules\cabinet\clients\GoogleOAuth',
+                'clientId' => '',
+                'clientSecret' => '',
+                'normalizeUserAttributeMap' => [
+                    'login' => ['emails', 0, 'value'],
+                    'email' => ['emails', 0, 'value'],
+                ],
+            ],
+            'vkontakte' => [
+                'class' => 'app\modules\cabinet\clients\VKontakte',
+                'clientId' => '',
+                'clientSecret' => '',
+                'normalizeUserAttributeMap' => [
+                    'id' => 'user_id',
+                    'login' => 'screen_name',
+                ],
+            ],
+            'facebook' => [
+                'class' => 'app\modules\cabinet\clients\Facebook',
+                'clientId' => '',
+                'clientSecret' => '',
+                'normalizeUserAttributeMap' => [
+                    'login' => 'id',
+                ],
+            ],
+            'twitter' => [
+                'class' => 'app\modules\cabinet\clients\Twitter',
+                'consumerKey' => '',
+                'consumerSecret' => '',
+                'normalizeUserAttributeMap' => [
+                    'login' => 'screen_name',
+                ],
+            ],
+            'gitlab' => [
+                'class' => 'app\modules\cabinet\clients\GitLab',
+                'clientId' => '',
+                'clientSecret' => '',
+                'normalizeUserAttributeMap' => [
+                    'login' => 'username',
+                ],
+            ],
+            'ok' => [
+                'class' => 'app\modules\cabinet\clients\Ok',
+                'clientId' => '',
+                'clientSecret' => '',
+                'applicationKey' => '',
+                'normalizeUserAttributeMap' => [
+                    'login' => 'uid',
+                ],
+                'scope' => 'VALUABLE_ACCESS,GET_EMAIL',
+            ],
+        ],
+    ],
+],
+
+console.php
+
+'controllerMap' => [
+    'migrate' => [
+        'class' => 'yii\console\controllers\MigrateController',
+        'migrationTable' => '{{%migration}}',
+        'interactive' => false,
+        'migrationPath' => [
+            '@app/modules/cabinet/migrations',
+        ],
+    ],
+    'access' => [
+        'class' => 'app\commands\AccessController',
+        'modules' => [
+            [
+                'name' => 'cabinet',
+                'controllers' => [
+                    'client' => [],
+                    'log' => ['index'],
+                ],
+            ],
+        ],
+    ],
+];
+
+params.php
+
+'menu' => [
+    [
+        [
+            'label' => 'Client',
+            'icon' => 'ti-user',
+            'items' => [
+                [
+                    'label' => 'Client',
+                    'icon' => 'ti-user',
+                    'url' => ['/cabinet/client'],
+                ],
+                [
+                    'label' => 'Log',
+                    'icon' => 'ti-book',
+                    'url' => ['/cabinet/log'],
+                ],
+            ],
+        ],
+    ],
+],
+
+rules.php
+
+/* Reset password */
+'<language:\w+\-\w+>/cabinet/default/reset/<token:[\w\_\-]+>' => 'cabinet/default/reset',

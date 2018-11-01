@@ -1,0 +1,78 @@
+{
+    "name": "krok/cmf2",
+    "description": "The CMF2 is based on Yii2",
+    "keywords": [
+        "yii2",
+        "framework",
+        "basic",
+        "project template"
+    ],
+    "type": "project",
+    "license": "BSD-3-Clause",
+    "authors": [
+        {
+            "name": "krok",
+            "email": "yii2.developer@gmail.com"
+        }
+    ],
+    "minimum-stability": "stable",
+    "repositories": [
+        {
+            "type": "composer",
+            "url": "https://asset-packagist.org"
+        },
+        {
+            "type": "composer",
+            "url": "https://packagist.dev-vps.ru"
+        }
+    ],
+    "require": {
+        "php": ">=5.4.0",
+        "yiisoft/yii2": "~2.0.15",
+        "yiisoft/yii2-redis": "~2.0.0",
+        "yiisoft/yii2-bootstrap": "~2.0.0",
+        "yiisoft/yii2-swiftmailer": "~2.0.0",
+        "yiisoft/yii2-imagine": "~2.0.0",
+        "yiisoft/yii2-jui": "~2.0.0",
+        "yiisoft/yii2-authclient": "~2.0.0",
+        "bootstrap-select/bootstrap-select": "~1.12.2",
+        "vlucas/phpdotenv": "~2.4.0",
+        "phpoffice/phpexcel": "~1.8",
+        "bower-asset/fancybox": "~3.2.5",
+        "bower-asset/jQuery-runner": "~2.3.3",
+        "bower-asset/bootstrap-select": "~1.12.2",
+        "bower-asset/jquery.cookie": "~1.4.1",
+        "opis/closure": "^3.0.0",
+        "yiisoft/yii2-httpclient": "~2.0.4",
+        "krok/phpquery": "0.9.5.3",
+        "yii2-developer/yii2-analytics": "~0.0.1",
+        "yii2-developer/yii2-search": "~0.1.0",
+        "yii2-developer/yii2-system": "~0.0.1",
+        "yii2-developer/yii2-extend": "~0.1.0",
+        "yii2-developer/yii2-sitemap": "~0.0.1",
+        "bower-asset/underscore": "~1.8",
+        "phpoffice/phpword": "dev-develop#c52c96d6573363f764d7bfba42be3ce998d1dc0e",
+        "bower-asset/bootbox": "~4.4.0",
+        "bower-asset/typeahead.js": "0.11.1",
+        "la-haute-societe/yii2-save-relations-behavior": "1.2.0",
+        "unclead/yii2-multiple-input": "2.10",
+        "zelenin/yii2-rss": "~0.1",
+        "kartik-v/bootstrap-fileinput": "4.4.5",
+        "yii2-developer/yii2-libreoffice": "~0.0.1",
+        "yii2-developer/yii2-dropzone-storage": "~0.0.1",
+        "yii2-developer/yii2-glide": "^0.0.3",
+        "yii2-developer/yii2-slim": "^0.0.6",
+        "yii2-developer/yii2-imperavi": "~0.0.11",
+        "contrib/yii2-oauth2-esia": "~0.0.2",
+        "contrib/yii2-charts": "~0.0.5"
+    },
+    "require-dev": {
+        "yiisoft/yii2-debug": "~2.0.0",
+        "yiisoft/yii2-gii": "~2.0.0"
+    },
+    "config": {
+        "optimize-autoloader": true,
+        "process-timeout": 1800,
+        "secure-http": false
+    }
+}

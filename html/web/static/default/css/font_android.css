@@ -1,0 +1,35 @@
+@charset "utf-8";
+
+/*====================== Fonts Windows ======================*/
+
+@font-face {
+    font-family: 'Roboto';
+    src: url('../fonts/android/RobotoRegular.eot');
+    src: url('../fonts/android/RobotoRegular.eot?#iefix') format('embedded-opentype'),
+    url('../fonts/android/RobotoRegular.woff') format('woff'),
+    url('../fonts/android/RobotoRegular.ttf') format('truetype');
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: 'Roboto';
+    src: url('../fonts/android/RobotoMedium.eot');
+    src: url('../fonts/android/RobotoMedium.eot?#iefix') format('embedded-opentype'),
+    url('../fonts/android/RobotoMedium.woff') format('woff'),
+    url('../fonts/android/RobotoMedium.ttf') format('truetype');
+    font-weight: 500;
+}
+
+@font-face {
+    font-family: 'Roboto';
+    src: url('../fonts/android/RobotoBold.eot');
+    src: url('../fonts/android/RobotoBold.eot?#iefix') format('embedded-opentype'),
+    url('../fonts/android/RobotoBold.woff') format('woff'),
+    url('../fonts/android/RobotoBold.ttf') format('truetype');
+    font-weight: 700;
+}
+
+body,
+body.android {
+    font-family: 'Roboto', "Helvetica Neue", Helvetica, Arial, sans-serif;
+}

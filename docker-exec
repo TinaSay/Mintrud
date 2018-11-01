@@ -1,0 +1,5 @@
+#!/usr/bin/env sh
+
+export $(cat .env | xargs)
+
+docker exec -i --user="$APACHE_RUN_USER:$APACHE_RUN_GROUP" "$CONTAINER_NAME" "$@"

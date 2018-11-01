@@ -1,0 +1,182 @@
+h1 {
+    font-size: 40px;
+}
+
+.btn {
+    padding: 8px 20px;
+    border-radius: 2px;
+    border: none;
+}
+
+.btn-success {
+    background-color: #689f38;
+    color: #ffffff;
+}
+
+.btn-success:hover,
+.btn-success:active,
+.btn-success:focus,
+.btn-success:visited {
+    background-color: #689f38;
+}
+
+.btn-default {
+    background-color: #ffffff;
+    color: #689f38;
+}
+
+.btn-default:hover,
+.btn-default:active,
+.btn-default:focus,
+.btn-default:visited {
+    background-color: #ffffff;
+    color: #689f38;
+}
+
+.text-success {
+    color: #689f38;
+}
+
+.navbar-default {
+    background-color: #ffffff;
+}
+
+.navbar-default .navbar-nav > li > a {
+    color: #000000;
+}
+
+.breadcrumb {
+    background-color: #ffffff;
+    margin-bottom: 0;
+    padding-left: 0;
+}
+
+.breadcrumb > li + li:before {
+    color: #000000;
+}
+
+.breadcrumb > .active a {
+    color: #707070;
+}
+
+.well {
+    border: none;
+    border-radius: 2px;
+    background-color: #689f38;
+    color: #ffffff;
+}
+
+.well-lg {
+    padding: 32px;
+}
+
+.navbar-default {
+    border-left: none;
+    border-top: none;
+    border-right: none;
+}
+
+.navbar-default .navbar-nav > .active > a,
+.navbar-default .navbar-nav > .active > a :focus,
+.navbar-default .navbar-nav > .active > a:hover {
+    background-color: #ffffff;
+    color: #000000;
+}
+
+#navbar-day-map.navbar-default .navbar-nav > .active > a,
+#navbar-day-map.navbar-default .navbar-nav > .active > a :focus,
+#navbar-day-map.navbar-default .navbar-nav > .active > a:hover {
+    background-color: #f4f4f4;
+    color: #000000;
+}
+
+.navbar-default .navbar-nav > li:last-child:hover a::after,
+.navbar-default .navbar-nav > li:last-child.active a::after {
+    width: calc(100% - 15px);
+}
+
+.list-group-item {
+    border-radius: 2px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding: 36px 32px;
+}
+
+.list-group-item:first-child {
+    border-radius: 2px;
+}
+
+.jumbotron {
+    background-color: #f4f4f4;
+    padding: 15px;
+}
+
+.tab-pane {
+    padding-top: 40px;
+}
+
+.nav-tabs > li {
+    max-width: 300px;
+}
+
+.jumbotron.friend-block h4 {
+    font-size: 1em;
+
+}
+
+.navbar-toggle {
+    font-size: 2em;
+    border: none;
+}
+
+.navbar-default .navbar-toggle:focus,
+.navbar-default .navbar-toggle:hover {
+    background-color: transparent;
+}
+
+.pagination > li {
+    display: inline-block;
+    margin-top: 6px;
+}
+
+.pagination > li > a {
+    padding: 2px 6px;
+}
+
+@media (min-width: 768px) {
+    .navbar-brand {
+        padding-left: 0;
+    }
+
+    .navbar-nav > li > a {
+        padding-top: 30px;
+        padding-bottom: 30px;
+        font-size: 16px;
+    }
+
+    .navbar-form {
+        padding-top: 15px;
+    }
+
+    .navbar-nav > li:last-child > a {
+        padding-right: 0;
+    }
+
+    .container .jumbotron,
+    .container-fluid .jumbotron {
+        padding-right: 15px;
+        padding-left: 15px;
+    }
+
+    .navbar-default .navbar-nav > li:hover a::after,
+    .navbar-default .navbar-nav > li.active a::after {
+        display: block;
+        position: absolute;
+        content: '';
+        width: calc(100% - 30px);
+        height: 2px;
+        bottom: 0;
+        left: 15px;
+        background-color: #689f38;
+    }
+}

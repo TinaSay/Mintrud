@@ -1,0 +1,192 @@
+html, body {
+    padding: 0;
+    margin: 0;
+}
+
+html, button, input, select, textarea {
+    color: #222;
+}
+
+.title {
+    font-family: Georgia, "Times New Roman", Times, serif;
+    color: #369;
+    font-size: 2em;
+    font-weight: normal;
+    line-height: 1em;
+    margin: 0 0 0.67em 0;
+}
+
+.story {
+    background: #F2EFE8;
+    padding: 20px;
+    border-bottom: 17px solid #fff;
+    min-height: 250px;
+}
+
+.story form {
+    display: block;
+    padding: 10px;
+    background-color: #fff;
+    margin: 1em 0;
+}
+
+.story .alert {
+    padding: 15px;
+    margin-bottom: 20px;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    display: block;
+}
+
+.story .alert.alert-success {
+    color: #3c763d;
+    background-color: #dff0d8;
+    border-color: #d6e9c6;
+}
+
+.story .alert.alert-danger {
+    color: #a94442;
+    background-color: #f2dede;
+    border-color: #ebccd1;
+}
+
+.issue h2 {
+    color: #369;
+    font-size: 1em;
+    font-weight: normal;
+    text-transform: uppercase;
+}
+
+.vote_block {
+    background: #E9EEF1;
+    padding: 20px 20px 0 20px;
+}
+
+.vote_block .text {
+    color: #333;
+    line-height: 18px;
+    margin: 0 0 0 10px;
+    vertical-align: top;
+    width: auto;
+}
+
+.vote_block ol {
+    margin: 0;
+    padding-left: 20px;
+}
+
+.vote_block li {
+    margin: 0 0 5px 10px;
+    list-style-type: none;
+}
+
+.vote_block .b-send {
+    margin: 0;
+    color: #fff;
+    background-color: #090;
+    border: 0 none;
+    display: block;
+    padding: 10px 20px 8px;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+.vote_block h3 {
+    border-bottom: 1px solid #336699;
+    border-top: none;
+    color: #336699;
+    font-size: 0.9em;
+    margin: 0 0 1em 0;
+    padding: 0 0 0.5em 0;
+    text-align: right;
+    text-transform: uppercase;
+}
+
+.vote_block h3.invalid_form {
+    color: #A71A1A;
+    text-align: left;
+}
+
+input[type="checkbox"], input[type="radio"] {
+    box-sizing: border-box;
+    padding: 0;
+}
+
+.hidden {
+    display: none;
+}
+
+.desc-item {
+    margin-bottom: 15px;
+}
+
+input.form-control[type=text],
+input.form-control[type=number],
+textarea.form-control,
+select.form-control {
+    display: block;
+    width: 95%;
+    height: 34px;
+    padding: 6px 12px;
+    font-size: 14px;
+    line-height: 1.42857143;
+    color: #222;
+    background-color: #fff;
+    background-image: none;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
+    -webkit-transition: border-color ease-in-out .15s, -webkit-box-shadow ease-in-out .15s;
+    -o-transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+    transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+}
+
+textarea.form-control {
+    resize: none;
+    min-height: 70px;
+}
+
+input.form-control[type=text]:disabled,
+textarea.form-control:disabled,
+select.form-control:disabled {
+    background-color: #F2EFE8;
+    cursor: not-allowed;
+}
+
+.shortstory {
+    color: #806d62;
+    font-style: italic;
+    text-decoration: none;
+}
+
+.desc-item .hint {
+    margin: 10px 0 10px 5px;
+    font-size: 1em;
+    color: #806d62;
+    font-style: italic;
+    display: inline-block;
+}
+
+.issue .panel {
+    margin: 40px 20px;
+}
+
+.issue .panel-header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.issue .panel-body {
+    padding: 15px 15px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.vote-block .panel-body ol {
+    padding-left: 0;
+}
+
+.desc-item.error .title {
+    color: #A71A1A;
+}

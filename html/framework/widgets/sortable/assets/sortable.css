@@ -1,0 +1,44 @@
+.ui-sortable {
+  list-style: none;
+  padding-left: 0;
+}
+.ui-sortable > li > .ui-sortable {
+  padding-left: 40px;
+}
+.ui-sortable .list-group-item {
+  margin-bottom: 5px;
+}
+
+.ministry-index .ui-sortable .list-group-item {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-wrap: nowrap;
+      -ms-flex-wrap: nowrap;
+          flex-wrap: nowrap;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.ui-sortable .list-group-item .name {
+  width: 100%;
+  margin-right: 20px;
+}
+.ui-sortable .handle {
+  float: left;
+  margin-right: 10px;
+  cursor: move;
+}
+.ui-sortable .list-group-item .control {
+  float: right;
+  white-space: nowrap;
+}
+.ui-sortable .control a {
+  margin: 5px;
+}
+
+
+

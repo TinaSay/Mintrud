@@ -1,0 +1,202 @@
+.wrapper{
+    position: relative;
+    top: 0;
+    height: 100vh;
+
+    &.wrapper-full-page{
+        height: auto;
+        min-height: 100vh;
+    }
+}
+
+.full-page{
+
+    &:after,
+    &:before{
+        display: block;
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        z-index: 2;
+    }
+    &:after{
+       background: $color-black;
+       z-index: 3;
+       opacity: 1;
+    }
+
+    > .content,
+    > .footer{
+        position: relative;
+        z-index: 4;
+    }
+
+    > .content{
+        min-height: calc(100vh - 70px);
+    }
+
+    .full-page-background{
+        position: absolute;
+        z-index: 1;
+        height: 100%;
+        width: 100%;
+        display: block;
+        top: 0;
+        left: 0;
+        background-size: cover;
+        background-position: center center;
+
+    }
+
+    &.has-image:after{
+        opacity: .7;
+    }
+
+    &[data-color="blue"]:after{
+        background-color: $filter-blue;
+    }
+    &[data-color="azure"]:after{
+        background-color: rgba($filter-azure, 0.7);
+    }
+    &[data-color="green"]:after{
+       background-color: rgba($filter-green, 0.7);
+    }
+    &[data-color="orange"]:after{
+        background-color: rgba($filter-orange, 0.7);
+    }
+    &[data-color="red"]:after{
+        background-color: rgba($filter-red, 0.7);
+    }
+
+    .footer nav > ul a:not(.btn),
+    .footer .copyright,
+    .footer .copyright a{
+        color: $white-color;
+        font-size: $font-size-base;
+    }
+
+}
+
+.login-page,
+.lock-page{
+    > .content{
+        padding-top: 13vh;
+    }
+}
+
+.lock-page{
+    .card-lock{
+        text-align: center;
+        width: 300px;
+        margin: 30px auto 0;
+        padding: 30px;
+        position: absolute;
+        left: 50%;
+        margin-left: -150px;
+        display: block;
+    }
+}
+.register-page{
+
+    .header-text{
+        text-align: center;
+        padding: ($padding-default-horizontal * 3) 0 ($padding-default-horizontal * 2);
+
+        h4{
+            margin-top: 10px;
+        }
+
+        hr{
+            opacity: .3;
+            margin-top: ($margin-base * 2);
+        }
+    }
+
+    .media{
+/*         color: $white-color; */
+        margin-bottom: ($margin-base * 3);
+
+        .icon{
+            float: left;
+            margin-right: 5px;
+        }
+
+        i{
+            font-size: $font-size-h2;
+        }
+
+        h4{
+            margin: 0 0 5px 0;
+        }
+    }
+
+    .form-group{
+        margin-bottom: ($margin-base + 10px);
+    }
+
+    .card{
+        .content{
+            padding-top: 0;
+            padding-bottom: 0;
+        }
+    }
+}
+
+.card-login {
+    .form-control, .bootstrap-select.form-control .btn { height: 60px; }
+    font-size: 16px;
+    .logo-big { height: 65px; }
+}
+.card-login .container-fluid {
+    padding-left: 50px;
+    padding-right: 50px;
+}
+.card-login__body {
+    padding-top: 35px;
+    padding-bottom: 10px;
+}
+.card-login__title {
+    text-align: center;
+    font-size: 16px;
+    max-width: 450px;
+    margin: 0 auto;
+    padding-top: 35px;
+    padding-bottom: 25px;
+    border-bottom: 1px solid $gray-input-outline;
+    .logo-big {  
+        display: block;
+        margin: 0 auto;
+        margin-bottom: 15px;
+    }
+    .name {
+        color: #000000;
+        display: block;
+    }
+}
+.card.card-login {
+    padding: 0;
+}
+.card-login__vertify {
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+.field-login-verifycode {
+    .control-label { 
+        color: $default-color; 
+        font-weight: 400;
+        margin-right: 15px;
+        font-size: 14px;
+    }
+    input { margin-top: 15px; }
+}
+.card-login__footer {
+    padding-top: 35px;
+    padding-bottom: 40px;
+}
+.card-login__footer .btn {
+    padding-top: 18px;
+    padding-bottom: 18px;
+}

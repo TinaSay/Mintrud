@@ -1,0 +1,9 @@
+# composer
+/framework/vendor
+
+# envelopment
+/web/robots.txt
+
+# html
+/web/html/*
+!/web/html/.htaccess

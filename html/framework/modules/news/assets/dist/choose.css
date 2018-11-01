@@ -1,0 +1,8 @@
+#modal-upload .preview {
+    max-height: 450px;
+    overflow: auto;
+}
+
+#modal-upload .chosen .thumbnail {
+    border-color: red;
+}
